@@ -1,0 +1,79 @@
+<%- include('partials/header'); -%>
+    <div class="row container-fluid" style="padding: 0%; margin:0%">
+        <div class="col" style="padding: 40px 20px; max-width: 45%;">
+            
+            <div class="container" style="margin: 0px 5px;">
+                <h1 style="margin: 0px;"><%= cafe.name %></h1>
+                <h7>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" style="fill: #ff0000;">
+                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/>
+                    </svg>          
+                    <%= cafe.location %>
+                </h7>
+            </div>
+            <div class="container" style="margin: 10px; display: flex;justify-content: flex-start;">
+                <div class="row"style="margin: 10px;display:flex">
+                    <div class="col-3" style="width: fit-content;">
+                        <p style="margin: 0px; color: #212529"><b>10/10</b></p>
+                        <p style="margin: 0px;width: max-content;">seats</p>
+                    </div>
+                    <div class="col-3" style="width: fit-content;">
+                        <p style="margin: 0px; color: #212529"><b>£<%= cafe.coffee_price %></b></p>
+                        <p style="margin: 0px;width: max-content;">coffee price</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container" style="margin: 10px;">
+                <h7><b>Description :</b></h7>
+                <p><%= cafe.description %></p>
+            </div>
+            <div class="container" >
+                <h7><b>Productivity :</b></h7>
+                <div class="amenities">
+                    <% if(cafe.has_sockets==true){ %>
+                    <div class="productivity">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                            <style>svg{fill:#2C3639}</style><path d="M96 0C78.3 0 64 14.3 64 32v96h64V32c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32v96h64V32c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32v32c0 77.4 55 142 128 156.8V480c0 17.7 14.3 32 32 32s32-14.3 32-32V412.8C297 398 352 333.4 352 256V224c17.7 0 32-14.3 32-32s-14.3-32-32-32H32z"/>
+                        </svg>
+                        <p>Has sockets</p>
+                    </div>
+                    <% } %>
+                    <% if(cafe.has_toilet==true){ %>
+                    <div class="productivity">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <style>svg{fill:#2C3639}</style><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48h8V196.9c-1.9 1.4-3.8 2.9-5.6 4.4C10.9 214.5 0 232.9 0 256c0 46.9 14.3 84.1 37 112.5c14.2 17.7 31.1 31.3 48.5 41.8L65.6 469.9c-3.3 9.8-1.6 20.5 4.4 28.8s15.7 13.3 26 13.3H352c10.3 0 19.9-4.9 26-13.3s7.7-19.1 4.4-28.8l-19.8-59.5c17.4-10.5 34.3-24.1 48.5-41.8c22.7-28.4 37-65.5 37-112.5c0-23.1-10.9-41.5-26.4-54.6c-1.8-1.5-3.7-3-5.6-4.4V48h8c13.3 0 24-10.7 24-24s-10.7-24-24-24H24zM384 256.3c0 1-.3 2.6-3.8 5.6c-4.8 4.1-14 9-29.3 13.4C320.5 284 276.1 288 224 288s-96.5-4-126.9-12.8c-15.3-4.4-24.5-9.3-29.3-13.4c-3.5-3-3.8-4.6-3.8-5.6l0-.3 0-.1c0-1 0-2.5 3.8-5.8c4.8-4.1 14-9 29.3-13.4C127.5 228 171.9 224 224 224s96.5 4 126.9 12.8c15.3 4.4 24.5 9.3 29.3 13.4c3.8 3.2 3.8 4.8 3.8 5.8l0 .1 0 .3zM328.2 384l-.2 .5 0-.5h.2zM112 64h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/>
+                        </svg>
+                        <p>Has toilet</p>
+                    </div>
+                    <% } %>
+                    <% if(cafe.has_wifi==true){ %>
+                    <div class="productivity">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                            <style>svg{fill:#2C3639}</style><path d="M54.2 202.9C123.2 136.7 216.8 96 320 96s196.8 40.7 265.8 106.9c12.8 12.2 33 11.8 45.2-.9s11.8-33-.9-45.2C549.7 79.5 440.4 32 320 32S90.3 79.5 9.8 156.7C-2.9 169-3.3 189.2 8.9 202s32.5 13.2 45.2 .9zM320 256c56.8 0 108.6 21.1 148.2 56c13.3 11.7 33.5 10.4 45.2-2.8s10.4-33.5-2.8-45.2C459.8 219.2 393 192 320 192s-139.8 27.2-190.5 72c-13.3 11.7-14.5 31.9-2.8 45.2s31.9 14.5 45.2 2.8c39.5-34.9 91.3-56 148.2-56zm64 160a64 64 0 1 0 -128 0 64 64 0 1 0 128 0z"/>
+                        </svg>
+                        <p>Has wifi</p>
+                    </div>
+                    <% } %>
+                    <% if(cafe.can_take_calls==true){ %>
+                    <div class="productivity">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                            <style>svg{fill:#2C3639}</style><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                        </svg>
+                        <p>Can take calls</p>
+                    </div>  
+                    <% } %>
+                </div> 
+            </div>
+            <div class="container" id="buttons">
+                <a href="<%= cafe.map_url %>"><button type="submit" class="btn btn-outline-primary formBtn">Get Directions</button></a>
+                <form method="post" action="/cafes/<%=cafe._id%>?_method=DELETE">
+                    <button type="submit" class="btn btn-outline-danger formBtn">Delete Cafe</button>
+                </form>
+            </div>
+        </div>
+        <div class="col" style="padding: 0%; max-width: 55%;">
+            <img src=<%= cafe.img_url %> alt="cafe" style="height:100%; width:100%;padding: 0px;object-fit: cover;max-height: 650px">
+        </div>
+    </div>
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,117 @@
+<%- include('partials/header'); -%>
+
+<form class="container" method="post" action="/cafes/<%=cafe._id%>?_method=PUT"" id="box2">
+    <div class="container">
+        <h1>Update Cafe</h1>
+        <p>Fill the following details to add new cafe.</p>
+    </div>
+  
+    <div class="container">
+        <div class="mb-3 row">
+            <label for="cafeName" class="col-sm-2 col-form-label">Name :</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="name" id="cafeName" value="<%= cafe.name %>" required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="location" class="col-sm-2 col-form-label">Location :</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="location" id="location" value="<%= cafe.location %>"  required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="desc" class="col-sm-2 col-form-label">Description :</label>
+            <div class="col-sm-6">
+              <textarea class="form-control" name="description" id="desc" value="<%= cafe.description %>"  required></textarea>
+            </div>
+          </div> 
+          <div class="mb-3 row">
+            <label for="mapURL" class="col-sm-2 col-form-label">Map URL :</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="map_id" id="mapURL" value="<%= cafe.map_url %>"  required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="imageURL" class="col-sm-2 col-form-label">Image URL :</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="img_id" id="imageURL" value="<%= cafe.img_url %>"  required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="seats" class="col-sm-2 col-form-label">Seats :</label>
+            <div class="col-sm-6">
+                <select class="form-select" aria-label="Default select example" name="seatNo" id="seats" required>
+                    <option selected>0-10</option>
+                    <option value="1">10-20</option>
+                    <option value="2">20-30</option>
+                    <option value="3">30-40</option>
+                    <option value="4">50+</option>
+                </select>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Coffee price :</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="price" id="price" value="<%= cafe.price %>"  required>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Has sockets :</label>
+            <div class="col-sm-6">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="socket" id="sockets1" value="true" required>
+                <label class="form-check-label" for="sockets1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="socket" id="sockets2" value="false" required>
+                <label class="form-check-label" for="sockets2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Has toilet :</label>
+            <div class="col-sm-6">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="toilet" id="toilet1" value="true" required>
+                <label class="form-check-label" for="toilet1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="toilet" id="toilet2" value="false" required>
+                <label class="form-check-label" for="toilet2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Has wifi :</label>
+            <div class="col-sm-6">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="wifi" id="wifi1" value="true" required>
+                <label class="form-check-label" for="wifi1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="wifi" id="wifi2" value="false" required>
+                <label class="form-check-label" for="wifi2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="price" class="col-sm-2 col-form-label">Can take calls :</label>
+            <div class="col-sm-6">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="calls" id="canTakeCalls1" value="true" required>
+                <label class="form-check-label" for="canTakeCalls1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="calls" id="canTakeCalls2" value="false" required>
+                <label class="form-check-label" for="canTakeCalls2">No</label>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" action="/" type="submit" >Udate</button>
+          </div> 
+    </div>
+  </form>
+</div>
+
+<%- include('partials/footer'); -%>
